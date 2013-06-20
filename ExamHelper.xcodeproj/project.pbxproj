@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35052D511772F30D00C73052 /* MSExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 35052D501772F30D00C73052 /* MSExam.m */; };
+		35052D601772F8BC00C73052 /* MSExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35052D5F1772F8BC00C73052 /* MSExamModel.m */; };
+		35052D621773034F00C73052 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35052D611773034F00C73052 /* EventKit.framework */; };
+		35D34AFD1772E76700CEE3CF /* MSExamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34AFC1772E76700CEE3CF /* MSExamTableViewController.m */; };
+		35D34B001772E78D00CEE3CF /* MSExamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34AFF1772E78D00CEE3CF /* MSExamDetailViewController.m */; };
+		35D34B091772ECF600CEE3CF /* books-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D34B081772ECF600CEE3CF /* books-26.png */; };
+		35D34B0B1772ED2E00CEE3CF /* paper-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D34B0A1772ED2E00CEE3CF /* paper-26.png */; };
+		35D34B0E1772EE3300CEE3CF /* MSHomeworkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34B0D1772EE3300CEE3CF /* MSHomeworkDetailViewController.m */; };
+		35D34B111772EE9900CEE3CF /* MSHomeworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34B101772EE9900CEE3CF /* MSHomeworkTableViewController.m */; };
+		35D34B2C1772F53300CEE3CF /* MSHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34B2B1772F53300CEE3CF /* MSHomework.m */; };
+		35E15EB3177333AC00D43EAB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35E15EB2177333AC00D43EAB /* Default-568h@2x.png */; };
+		35E15EB5177336CA00D43EAB /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E15EB4177336CA00D43EAB /* EventKitUI.framework */; };
+		35EE3D441771AAA500D7EA5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EE3D431771AAA500D7EA5B /* UIKit.framework */; };
+		35EE3D461771AAA500D7EA5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EE3D451771AAA500D7EA5B /* Foundation.framework */; };
+		35EE3D481771AAA500D7EA5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EE3D471771AAA500D7EA5B /* CoreGraphics.framework */; };
+		35EE3D4A1771AAA500D7EA5B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EE3D491771AAA500D7EA5B /* CoreData.framework */; };
+		35EE3D501771AAA500D7EA5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35EE3D4E1771AAA500D7EA5B /* InfoPlist.strings */; };
+		35EE3D521771AAA500D7EA5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EE3D511771AAA500D7EA5B /* main.m */; };
+		35EE3D561771AAA500D7EA5B /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EE3D551771AAA500D7EA5B /* MSAppDelegate.m */; };
+		35EE3D591771AAA500D7EA5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EE3D571771AAA500D7EA5B /* MainStoryboard.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		35052D4F1772F30D00C73052 /* MSExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExam.h; sourceTree = "<group>"; };
+		35052D501772F30D00C73052 /* MSExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExam.m; sourceTree = "<group>"; };
+		35052D5E1772F8BC00C73052 /* MSExamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamModel.h; sourceTree = "<group>"; };
+		35052D5F1772F8BC00C73052 /* MSExamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExamModel.m; sourceTree = "<group>"; };
+		35052D611773034F00C73052 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		35D34AFB1772E76700CEE3CF /* MSExamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamTableViewController.h; sourceTree = "<group>"; };
+		35D34AFC1772E76700CEE3CF /* MSExamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExamTableViewController.m; sourceTree = "<group>"; };
+		35D34AFE1772E78D00CEE3CF /* MSExamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamDetailViewController.h; sourceTree = "<group>"; };
+		35D34AFF1772E78D00CEE3CF /* MSExamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExamDetailViewController.m; sourceTree = "<group>"; };
+		35D34B081772ECF600CEE3CF /* books-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "books-26.png"; sourceTree = "<group>"; };
+		35D34B0A1772ED2E00CEE3CF /* paper-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-26.png"; sourceTree = "<group>"; };
+		35D34B0C1772EE3300CEE3CF /* MSHomeworkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeworkDetailViewController.h; sourceTree = "<group>"; };
+		35D34B0D1772EE3300CEE3CF /* MSHomeworkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeworkDetailViewController.m; sourceTree = "<group>"; };
+		35D34B0F1772EE9900CEE3CF /* MSHomeworkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeworkTableViewController.h; sourceTree = "<group>"; };
+		35D34B101772EE9900CEE3CF /* MSHomeworkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeworkTableViewController.m; sourceTree = "<group>"; };
+		35D34B2A1772F53300CEE3CF /* MSHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomework.h; sourceTree = "<group>"; };
+		35D34B2B1772F53300CEE3CF /* MSHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomework.m; sourceTree = "<group>"; };
+		35E15EB2177333AC00D43EAB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		35E15EB4177336CA00D43EAB /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		35EE3D3F1771AAA500D7EA5B /* ExamHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35EE3D431771AAA500D7EA5B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35EE3D451771AAA500D7EA5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		35EE3D471771AAA500D7EA5B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		35EE3D491771AAA500D7EA5B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		35EE3D4D1771AAA500D7EA5B /* ExamHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExamHelper-Info.plist"; sourceTree = "<group>"; };
+		35EE3D4F1771AAA500D7EA5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35EE3D511771AAA500D7EA5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		35EE3D531771AAA500D7EA5B /* ExamHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExamHelper-Prefix.pch"; sourceTree = "<group>"; };
+		35EE3D541771AAA500D7EA5B /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
+		35EE3D551771AAA500D7EA5B /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
+		35EE3D581771AAA500D7EA5B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35EE3D3C1771AAA500D7EA5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E15EB5177336CA00D43EAB /* EventKitUI.framework in Frameworks */,
+				35052D621773034F00C73052 /* EventKit.framework in Frameworks */,
+				35EE3D441771AAA500D7EA5B /* UIKit.framework in Frameworks */,
+				35EE3D461771AAA500D7EA5B /* Foundation.framework in Frameworks */,
+				35EE3D481771AAA500D7EA5B /* CoreGraphics.framework in Frameworks */,
+				35EE3D4A1771AAA500D7EA5B /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35052D411772EF4B00C73052 /* ExamModel */ = {
+			isa = PBXGroup;
+			children = (
+				35052D4F1772F30D00C73052 /* MSExam.h */,
+				35052D501772F30D00C73052 /* MSExam.m */,
+				35052D5E1772F8BC00C73052 /* MSExamModel.h */,
+				35052D5F1772F8BC00C73052 /* MSExamModel.m */,
+			);
+			name = ExamModel;
+			sourceTree = "<group>";
+		};
+		35D34B011772E79E00CEE3CF /* ExamController */ = {
+			isa = PBXGroup;
+			children = (
+				35D34AFB1772E76700CEE3CF /* MSExamTableViewController.h */,
+				35D34AFC1772E76700CEE3CF /* MSExamTableViewController.m */,
+				35D34AFE1772E78D00CEE3CF /* MSExamDetailViewController.h */,
+				35D34AFF1772E78D00CEE3CF /* MSExamDetailViewController.m */,
+			);
+			name = ExamController;
+			sourceTree = "<group>";
+		};
+		35D34B021772E7DB00CEE3CF /* _Other */ = {
+			isa = PBXGroup;
+			children = (
+				35EE3D541771AAA500D7EA5B /* MSAppDelegate.h */,
+				35EE3D551771AAA500D7EA5B /* MSAppDelegate.m */,
+			);
+			name = _Other;
+			sourceTree = "<group>";
+		};
+		35D34B031772E7F200CEE3CF /* HomeworkController */ = {
+			isa = PBXGroup;
+			children = (
+				35D34B0C1772EE3300CEE3CF /* MSHomeworkDetailViewController.h */,
+				35D34B0D1772EE3300CEE3CF /* MSHomeworkDetailViewController.m */,
+				35D34B0F1772EE9900CEE3CF /* MSHomeworkTableViewController.h */,
+				35D34B101772EE9900CEE3CF /* MSHomeworkTableViewController.m */,
+			);
+			name = HomeworkController;
+			sourceTree = "<group>";
+		};
+		35D34B1A1772F03000CEE3CF /* _Icons */ = {
+			isa = PBXGroup;
+			children = (
+				35E15EB2177333AC00D43EAB /* Default-568h@2x.png */,
+				35D34B0A1772ED2E00CEE3CF /* paper-26.png */,
+				35D34B081772ECF600CEE3CF /* books-26.png */,
+			);
+			name = _Icons;
+			sourceTree = "<group>";
+		};
+		35D34B1C1772F03F00CEE3CF /* HomeworkModel */ = {
+			isa = PBXGroup;
+			children = (
+				35D34B2A1772F53300CEE3CF /* MSHomework.h */,
+				35D34B2B1772F53300CEE3CF /* MSHomework.m */,
+			);
+			name = HomeworkModel;
+			sourceTree = "<group>";
+		};
+		35EE3D341771AAA400D7EA5B = {
+			isa = PBXGroup;
+			children = (
+				35E15EB4177336CA00D43EAB /* EventKitUI.framework */,
+				35052D611773034F00C73052 /* EventKit.framework */,
+				35EE3D4B1771AAA500D7EA5B /* ExamHelper */,
+				35EE3D421771AAA500D7EA5B /* Frameworks */,
+				35EE3D401771AAA500D7EA5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35EE3D401771AAA500D7EA5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35EE3D3F1771AAA500D7EA5B /* ExamHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35EE3D421771AAA500D7EA5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35EE3D431771AAA500D7EA5B /* UIKit.framework */,
+				35EE3D451771AAA500D7EA5B /* Foundation.framework */,
+				35EE3D471771AAA500D7EA5B /* CoreGraphics.framework */,
+				35EE3D491771AAA500D7EA5B /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35EE3D4B1771AAA500D7EA5B /* ExamHelper */ = {
+			isa = PBXGroup;
+			children = (
+				35D34B1A1772F03000CEE3CF /* _Icons */,
+				35D34B021772E7DB00CEE3CF /* _Other */,
+				35D34B011772E79E00CEE3CF /* ExamController */,
+				35052D411772EF4B00C73052 /* ExamModel */,
+				35D34B031772E7F200CEE3CF /* HomeworkController */,
+				35D34B1C1772F03F00CEE3CF /* HomeworkModel */,
+				35EE3D571771AAA500D7EA5B /* MainStoryboard.storyboard */,
+				35EE3D4C1771AAA500D7EA5B /* Supporting Files */,
+			);
+			path = ExamHelper;
+			sourceTree = "<group>";
+		};
+		35EE3D4C1771AAA500D7EA5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35EE3D4D1771AAA500D7EA5B /* ExamHelper-Info.plist */,
+				35EE3D4E1771AAA500D7EA5B /* InfoPlist.strings */,
+				35EE3D511771AAA500D7EA5B /* main.m */,
+				35EE3D531771AAA500D7EA5B /* ExamHelper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35EE3D3E1771AAA500D7EA5B /* ExamHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35EE3D651771AAA500D7EA5B /* Build configuration list for PBXNativeTarget "ExamHelper" */;
+			buildPhases = (
+				35EE3D3B1771AAA500D7EA5B /* Sources */,
+				35EE3D3C1771AAA500D7EA5B /* Frameworks */,
+				35EE3D3D1771AAA500D7EA5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExamHelper;
+			productName = ExamHelper;
+			productReference = 35EE3D3F1771AAA500D7EA5B /* ExamHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35EE3D361771AAA400D7EA5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MS;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 35EE3D391771AAA400D7EA5B /* Build configuration list for PBXProject "ExamHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 35EE3D341771AAA400D7EA5B;
+			productRefGroup = 35EE3D401771AAA500D7EA5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35EE3D3E1771AAA500D7EA5B /* ExamHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35EE3D3D1771AAA500D7EA5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35EE3D501771AAA500D7EA5B /* InfoPlist.strings in Resources */,
+				35EE3D591771AAA500D7EA5B /* MainStoryboard.storyboard in Resources */,
+				35D34B091772ECF600CEE3CF /* books-26.png in Resources */,
+				35D34B0B1772ED2E00CEE3CF /* paper-26.png in Resources */,
+				35E15EB3177333AC00D43EAB /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35EE3D3B1771AAA500D7EA5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35EE3D521771AAA500D7EA5B /* main.m in Sources */,
+				35EE3D561771AAA500D7EA5B /* MSAppDelegate.m in Sources */,
+				35D34AFD1772E76700CEE3CF /* MSExamTableViewController.m in Sources */,
+				35D34B001772E78D00CEE3CF /* MSExamDetailViewController.m in Sources */,
+				35D34B0E1772EE3300CEE3CF /* MSHomeworkDetailViewController.m in Sources */,
+				35D34B111772EE9900CEE3CF /* MSHomeworkTableViewController.m in Sources */,
+				35052D511772F30D00C73052 /* MSExam.m in Sources */,
+				35D34B2C1772F53300CEE3CF /* MSHomework.m in Sources */,
+				35052D601772F8BC00C73052 /* MSExamModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		35EE3D4E1771AAA500D7EA5B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35EE3D4F1771AAA500D7EA5B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		35EE3D571771AAA500D7EA5B /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35EE3D581771AAA500D7EA5B /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35EE3D631771AAA500D7EA5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		35EE3D641771AAA500D7EA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35EE3D661771AAA500D7EA5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExamHelper/ExamHelper-Prefix.pch";
+				INFOPLIST_FILE = "ExamHelper/ExamHelper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		35EE3D671771AAA500D7EA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExamHelper/ExamHelper-Prefix.pch";
+				INFOPLIST_FILE = "ExamHelper/ExamHelper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35EE3D391771AAA400D7EA5B /* Build configuration list for PBXProject "ExamHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35EE3D631771AAA500D7EA5B /* Debug */,
+				35EE3D641771AAA500D7EA5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35EE3D651771AAA500D7EA5B /* Build configuration list for PBXNativeTarget "ExamHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35EE3D661771AAA500D7EA5B /* Debug */,
+				35EE3D671771AAA500D7EA5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35EE3D361771AAA400D7EA5B /* Project object */;
+}
