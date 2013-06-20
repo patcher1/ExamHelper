@@ -63,7 +63,7 @@
         
         [self.exams addObject:exam];
     }
-    return nil;
+    return self.exams;
 }
 
 -(NSMutableArray*) loadNextExamsFromCalendar:(int)months fromStartDate:(NSDate*) startDate{
@@ -80,7 +80,18 @@
     NSLog(@"Dates start: %@ end: %@",startDate,endDate);
     
     NSPredicate *predicate = [self.calendarStore predicateForEventsWithStartDate:startDate endDate:endDate calendars:nil];
-    return nil;
+    NSArray *events = [self.calendarStore eventsMatchingPredicate:predicate];
+    
+    for (EKEvent *recentEvent in events) {
+        MSExam *exam = [[MSExam alloc]init];
+        exam.name = recentEvent.title;
+        exam.startDate = recentEvent.startDate;
+        exam.endDate = recentEvent.endDate;
+        exam.notes = recentEvent.notes;
+        
+        [self.exams addObject:exam];
+    }
+    return self.exams;
 }
 
 
