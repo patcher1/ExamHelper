@@ -38,12 +38,18 @@
     [exampleHomework setNote: @"Don't forget the handout" ];
     [exampleHomework setDone: NO ];
     [_homework addObject:exampleHomework];
+    exampleHomework = [[MSHomework alloc] init];
+    [exampleHomework setName: @"Complete App" ];
+    [exampleHomework setNote: @"Don't forget to refactor" ];
+    [exampleHomework setDone: YES ];
+    [_homework addObject:exampleHomework];
     /*****************************************************/
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [self.tableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -62,10 +68,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
+    NSLog(@"Table View Creation");
+    MSHomework *currentHomeworkElement = [self.homework objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"HomeworkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell.textLabel.text = [[self.homework objectAtIndex:indexPath.row] name];
+    
+    if(![currentHomeworkElement done]) {
+        cell.imageView.image = [UIImage imageNamed: @"historical-26.png"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed: @"checkmark-26.png"];
+    }
+    
+    cell.textLabel.text = [currentHomeworkElement name];
     
     return cell;
 }
