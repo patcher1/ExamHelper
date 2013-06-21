@@ -14,8 +14,8 @@ const NSString *EXAM_PREFIX = @"[EXAM]";
 
 @interface MSExam()
 @property (nonatomic,strong) NSString *name;
-@property (nonatomic, strong) NSDate *startDate;
-@property (nonatomic, strong) NSDate *endDate;
+@property (nonatomic, strong) NSString *startDate;
+@property (nonatomic, strong) NSString *endDate;
 @property(nonatomic, copy) NSString *location;
 @property(nonatomic, copy) NSString *notes;
 
@@ -43,14 +43,14 @@ const NSString *EXAM_PREFIX = @"[EXAM]";
     return _location;
 }
 
-- (NSDate*) startDate{
+- (NSString*) startDate{
     if(!_startDate){
         _startDate = [NSDate date];
     }
     return _startDate;
 }
 
-- (NSDate*) endDate{
+- (NSString*) endDate{
     if(!_endDate){
         _endDate = [NSDate date];
     }

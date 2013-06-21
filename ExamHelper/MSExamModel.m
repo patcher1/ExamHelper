@@ -12,6 +12,7 @@
 @interface MSExamModel ()
 @property (nonatomic,strong) NSMutableArray *exams;
 @property (nonatomic, strong) EKEventStore *calendarStore;
+@property (weak, nonatomic) NSDateFormatter* dateFormatter;
 @end
 
 @implementation MSExamModel
@@ -46,6 +47,7 @@
  */
 -(NSMutableArray*) loadExamsFromCalendar:(int)months{
     NSDate *startDate = [NSDate date];
+    [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
     
     int daysToAdd = months * 30;
     
@@ -64,8 +66,8 @@
     for (EKEvent *recentEvent in events) {
         MSExam *exam = [[MSExam alloc]init];
         exam.name = recentEvent.title;
-        exam.startDate = recentEvent.startDate;
-        exam.endDate = recentEvent.endDate;
+        exam.startDate = [self.dateFormatter stringFromDate: recentEvent.startDate];
+        exam.endDate = [self.dateFormatter stringFromDate: recentEvent.endDate];
         exam.notes = recentEvent.notes;
         
         [self.exams addObject:exam];
@@ -74,7 +76,7 @@
 }
 
 -(NSMutableArray*) loadNextExamsFromCalendar:(int)months fromStartDate:(NSDate*) startDate{
-    
+    [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
     int daysToAdd = months * 30;
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -92,8 +94,8 @@
     for (EKEvent *recentEvent in events) {
         MSExam *exam = [[MSExam alloc]init];
         exam.name = recentEvent.title;
-        exam.startDate = recentEvent.startDate;
-        exam.endDate = recentEvent.endDate;
+        exam.startDate = [self.dateFormatter stringFromDate: recentEvent.startDate];
+        exam.endDate =  [self.dateFormatter stringFromDate: recentEvent.endDate];
         exam.notes = recentEvent.notes;
         
         [self.exams addObject:exam];
@@ -102,13 +104,15 @@
 }
 
 -(void)safeExam:(MSExam*)exam{
+    [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    
     EKEvent *examEvent = [EKEvent eventWithEventStore:self.calendarStore];
     examEvent.calendar  = [self.calendarStore defaultCalendarForNewEvents];
     examEvent.title     = exam.name;
     examEvent.location  = exam.location;
     examEvent.notes     = exam.notes;
-    examEvent.startDate = exam.startDate;
-    examEvent.endDate   = exam.endDate;
+    examEvent.startDate = [self.dateFormatter dateFromString: exam.startDate];
+    examEvent.endDate   = [self.dateFormatter dateFromString: exam.endDate];
     examEvent.allDay    = YES; //only for testing
     
     NSError *safeEventError;
