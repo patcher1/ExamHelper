@@ -30,11 +30,6 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSLog(@"Homework title text: %@", _homeworkTitleTextField.text);
-    NSLog(@"Notes text: %@", _notesTextView.text);
-    
-    NSLog(@"Homework info: %@/%@", _homework.name, _homework.note);
-    
     _homeworkTitleTextField.borderStyle = UITextBorderStyleNone;
     _homeworkTitleTextField.userInteractionEnabled = NO;
     _homeworkTitleTextField.text = _homework.name;
@@ -70,17 +65,15 @@
         NSLog(@"Changing to edit mode");
     }
     else {
-        // TODO: Save this!
         NSLog(@"Saving changes");
         _homeworkTitleTextField.userInteractionEnabled = NO;
         _notesTextView.userInteractionEnabled = NO;
         
-        NSLog(@"Homework title text: %@", _homeworkTitleTextField.text);
-        NSLog(@"Notes text: %@", _notesTextView.text);
-        
         [_homework setName: _homeworkTitleTextField.text];
         [_homework setNote: _notesTextView.text];
         [_homework setDone: _isHomeworkDoneSwitch.on];
+        
+        // TODO: Save this!
     }
 }
 

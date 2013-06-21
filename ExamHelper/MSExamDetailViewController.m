@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *alertInfoLabel;
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 @end
 
@@ -36,7 +35,6 @@
     _startDateLabel.text = [dateFormatter stringFromDate:_exam.startDate];
     _endDateLabel.text = [dateFormatter stringFromDate:_exam.endDate];
     _locationLabel.text = _exam.location;
-    _alertInfoLabel.text = @"Not done yet";
     _notesTextView.text = _exam.notes;
     _notesTextView.userInteractionEnabled = NO;
 }
@@ -47,7 +45,6 @@
     [self setStartDateLabel:nil];
     [self setEndDateLabel:nil];
     [self setLocationLabel:nil];
-    [self setAlertInfoLabel:nil];
     [self setNotesTextView:nil];
     [self setNotesTextView:nil];
     [super viewDidUnload];
