@@ -10,6 +10,8 @@
 		35052D511772F30D00C73052 /* MSExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 35052D501772F30D00C73052 /* MSExam.m */; };
 		35052D601772F8BC00C73052 /* MSExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35052D5F1772F8BC00C73052 /* MSExamModel.m */; };
 		35052D621773034F00C73052 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35052D611773034F00C73052 /* EventKit.framework */; };
+		35A0CD1F17742E6800E10312 /* checkmark-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A0CD1D17742E6800E10312 /* checkmark-26.png */; };
+		35A0CD2017742E6800E10312 /* historical-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A0CD1E17742E6800E10312 /* historical-26.png */; };
 		35D34AFD1772E76700CEE3CF /* MSExamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34AFC1772E76700CEE3CF /* MSExamTableViewController.m */; };
 		35D34B001772E78D00CEE3CF /* MSExamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D34AFF1772E78D00CEE3CF /* MSExamDetailViewController.m */; };
 		35D34B091772ECF600CEE3CF /* books-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D34B081772ECF600CEE3CF /* books-26.png */; };
@@ -35,6 +37,8 @@
 		35052D5E1772F8BC00C73052 /* MSExamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamModel.h; sourceTree = "<group>"; };
 		35052D5F1772F8BC00C73052 /* MSExamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExamModel.m; sourceTree = "<group>"; };
 		35052D611773034F00C73052 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		35A0CD1D17742E6800E10312 /* checkmark-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-26.png"; sourceTree = "<group>"; };
+		35A0CD1E17742E6800E10312 /* historical-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "historical-26.png"; sourceTree = "<group>"; };
 		35D34AFB1772E76700CEE3CF /* MSExamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamTableViewController.h; sourceTree = "<group>"; };
 		35D34AFC1772E76700CEE3CF /* MSExamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExamTableViewController.m; sourceTree = "<group>"; };
 		35D34AFE1772E78D00CEE3CF /* MSExamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamDetailViewController.h; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		35D34B1A1772F03000CEE3CF /* _Icons */ = {
 			isa = PBXGroup;
 			children = (
+				35A0CD1D17742E6800E10312 /* checkmark-26.png */,
+				35A0CD1E17742E6800E10312 /* historical-26.png */,
 				35E15EB2177333AC00D43EAB /* Default-568h@2x.png */,
 				35D34B0A1772ED2E00CEE3CF /* paper-26.png */,
 				35D34B081772ECF600CEE3CF /* books-26.png */,
@@ -253,6 +259,8 @@
 				35D34B091772ECF600CEE3CF /* books-26.png in Resources */,
 				35D34B0B1772ED2E00CEE3CF /* paper-26.png in Resources */,
 				35E15EB3177333AC00D43EAB /* Default-568h@2x.png in Resources */,
+				35A0CD1F17742E6800E10312 /* checkmark-26.png in Resources */,
+				35A0CD2017742E6800E10312 /* historical-26.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
