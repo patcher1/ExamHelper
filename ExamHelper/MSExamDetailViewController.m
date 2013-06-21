@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    NSLog(@"Date info: %@ %@", [self.dateFormatter stringFromDate:self.exam.startDate], [self.dateFormatter stringFromDate:self.exam.endDate]);
     self.examTitleTextField.text = self.exam.name;
     self.startDateTextfield.text = [self.dateFormatter stringFromDate:self.exam.startDate];
     self.endDateTextField.text = [self.dateFormatter stringFromDate:self.exam.endDate];
