@@ -12,11 +12,9 @@
 
 @interface MSHomeworkTableViewController ()
 @property (nonatomic, strong) NSMutableArray *homework;
-@property (nonatomic, strong) MSHomework *exampleHomework;
 @end
 
 @implementation MSHomeworkTableViewController
-@synthesize exampleHomework;
 @synthesize homework = _homework;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -35,19 +33,6 @@
     if(!_homework) {
         _homework = [[NSMutableArray alloc] init];
     }
-    /*****************************************************/
-    // TODO Remove! This is for testing purposes only!
-    exampleHomework = [[MSHomework alloc] init];
-    [exampleHomework setName: @"Complete Presentation" ];
-    [exampleHomework setNote: @"Don't forget the handout" ];
-    [exampleHomework setDone: NO ];
-    [_homework addObject:exampleHomework];
-    exampleHomework = [[MSHomework alloc] init];
-    [exampleHomework setName: @"Complete App" ];
-    [exampleHomework setNote: @"Don't forget to refactor" ];
-    [exampleHomework setDone: YES ];
-    [_homework addObject:exampleHomework];
-    /*****************************************************/
 }
 
 - (void)viewDidUnload

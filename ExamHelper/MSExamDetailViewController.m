@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *endDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
+@property (weak, nonatomic) NSDateFormatter* dateFormatter;
 @end
 
 @implementation MSExamDetailViewController
@@ -30,12 +31,10 @@
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
     self.examTitleTextField.text = self.exam.name;
-    self.startDateTextfield.text = [dateFormatter stringFromDate:self.exam.startDate];
-    self.endDateTextField.text = [dateFormatter stringFromDate:self.exam.endDate];
+    self.startDateTextfield.text = [self.dateFormatter stringFromDate:self.exam.startDate];
+    self.endDateTextField.text = [self.dateFormatter stringFromDate:self.exam.endDate];
     self.locationTextField.text = self.exam.location;
     self.notesTextView.text = self.exam.notes;
     [self disableEditingForEditableUIElements];
@@ -63,10 +62,10 @@
         NSLog(@"Saving changes");
         [self disableEditingForEditableUIElements];
         [self.exam setName: self.examTitleTextField.text];
-        [self.exam setName: self.startDateTextfield.text];
-        [self.exam setName: self.endDateTextField.text];
-        [self.exam setName: self.locationTextField.text];
-        [self.exam setName: self.notesTextView.text];
+        [self.exam setStartDate: [self.dateFormatter dateFromString:self.startDateTextfield.text]];
+        [self.exam setEndDate: [self.dateFormatter dateFromString:self.endDateTextField.text]];
+        [self.exam setLocation: self.locationTextField.text];
+        [self.exam setNotes: self.notesTextView.text];
         
         // TODO: Save this!
     }

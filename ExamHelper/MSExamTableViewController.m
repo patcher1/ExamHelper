@@ -13,12 +13,10 @@
 
 @interface MSExamTableViewController ()
 @property (nonatomic, strong) NSMutableArray *exams;
-@property (nonatomic, strong) MSExam *exampleExam;
 @property (nonatomic, strong) MSExamModel *model;
 @end
 
 @implementation MSExamTableViewController
-@synthesize exampleExam;
 @synthesize exams = _exams;
 @synthesize model = _model;
 
@@ -35,19 +33,9 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    /*****************************************************/
-    /* TODO Remove! This is for testing purposes only!
-     if(!_exams) {
-     _exams = [[NSMutableArray alloc] init];
-     }
-     exampleExam = [[MSExam alloc] init];
-     [exampleExam setStartDate: [[NSDate alloc] init]];
-     [exampleExam setEndDate: [[NSDate alloc] init]];
-     [exampleExam setName: @"German Exam" ];
-     [exampleExam setNotes: @"Study hard! It's difficult" ];
-     [exampleExam setLocation: @"Zürich" ];
-     [_exams addObject:exampleExam];
-     ****************************************************/
+    if(!_exams) {
+        _exams = [[NSMutableArray alloc] init];
+    }
 }
 
 - (void)insertNewObject:(id)sender
