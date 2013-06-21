@@ -39,7 +39,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "86"
          endingLineNumber = "86"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
