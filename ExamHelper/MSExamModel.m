@@ -27,18 +27,16 @@
 }
 
 - (EKEventStore*) calendarStore{
-    NSLog(@"Calendar store create");
+   
     if(!_calendarStore){
         _calendarStore = [[EKEventStore alloc] init];
+        if([_calendarStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+            NSLog(@"Running on ios6");
+            [_calendarStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                NSLog(@"User permited access to calendar for events");
+            }];
+        }
     }
-    
-    if([_calendarStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-        NSLog(@"Running on ios6");
-        [_calendarStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-            NSLog(@"User permited access to calendar for events");
-        }];
-    }
-    
     
     return _calendarStore;
 }

@@ -26,18 +26,16 @@
 }
 
 - (EKEventStore*) calendarStore{
-    NSLog(@"Calendar store create");
+    
     if(!_calendarStore){
         _calendarStore = [[EKEventStore alloc] init];
+        if([_calendarStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+            NSLog(@"Running on ios6");
+            [_calendarStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+                NSLog(@"User permited access to calendar for reminders");
+            }];
+        }  
     }
-    
-    if([_calendarStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-        NSLog(@"Running on ios6");
-        [_calendarStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-            NSLog(@"User permited access to calendar for reminders");
-        }];
-    }
-    
     
     return _calendarStore;
 }
@@ -46,6 +44,8 @@
  Loads Homeworks from now until now + given months.
  */
 -(NSMutableArray*) loadHomeworksFromCalendar:(int)months{
+    
+
     NSDate *startDate = [NSDate date];
     
     int daysToAdd = months * 30;
@@ -76,6 +76,7 @@
 
 
 -(void)saveHomework:(MSHomework*)homework{
+    NSLog(@"Saving homework...");
     EKReminder *homeworkReminder = [EKReminder reminderWithEventStore:self.calendarStore];
     homeworkReminder.calendar  = [self.calendarStore defaultCalendarForNewReminders];
     homeworkReminder.title = homework.name;
@@ -85,7 +86,7 @@
     [self.calendarStore saveReminder:homeworkReminder commit:YES error:&safeReminderError];
     
     if(safeReminderError){
-        NSLog(@"Couldn't safe reminder!");
+        NSLog(@"Couldn't save reminder!");
     }else{
         NSLog(@"New reminder saved!");
     }
