@@ -31,6 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
     /*****************************************************/
     /* TODO Remove! This is for testing purposes only!
     if(!_exams) {
@@ -44,6 +48,31 @@
     [exampleExam setLocation: @"Zürich" ];
     [_exams addObject:exampleExam];
     ****************************************************/
+}
+
+- (void)insertNewObject:(id)sender
+{
+    MSExam *newExam = [[MSExam alloc] init];
+    
+    [newExam setName:@"Exam"];
+    [newExam setNotes:@"Template, you can edit this now"];
+    
+    [_exams addObject:newExam];
+    
+    // TODO Save the new item
+    
+    [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_exams removeObjectAtIndex:indexPath.row];
+    }
+    
+    // TODO Delete the new item
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -64,6 +93,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_exams count];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
