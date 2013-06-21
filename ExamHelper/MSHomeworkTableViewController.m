@@ -22,12 +22,7 @@
 @synthesize homeworks = _homeworks;
 @synthesize model = _model;
 
-- (MSHomeWorkModel*)model{
-    if(!_model){
-        _model = [[MSHomeWorkModel alloc]init];
-    }
-    return _model;
-}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -41,10 +36,7 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    if(!_homeworks) {
-        _homeworks = [[NSMutableArray alloc] init];
-    }
+   
 }
 
 - (void)viewDidUnload
@@ -132,9 +124,18 @@
 }
 
 -(NSMutableArray*)homeworks{
-    
-    _homeworks = [self.model loadHomeworksFromCalendar:12];
+    if(_homeworks){
+        _homeworks = [self.model loadHomeworksFromCalendar:12];
+        NSLog(@"Homeworks loaded");
+    }
     return _homeworks;
+}
+- (MSHomeWorkModel*)model{
+    if(!_model){
+        _model = [[MSHomeWorkModel alloc]init];
+        NSLog(@"Model created");
+    }
+    return _model;
 }
 
 @end

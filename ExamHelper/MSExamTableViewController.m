@@ -31,9 +31,6 @@
     [super viewDidLoad];    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    if(!_exams) {
-        _exams = [[NSMutableArray alloc] init];
-    }
 }
 
 - (void)insertNewObject:(id)sender
@@ -111,10 +108,11 @@
 }
 
 -(NSMutableArray*)exams{
-    NSLog(@"Exams loading...");
-   
-    _exams = [self.model loadExamsFromCalendar:12];
-    NSLog(@"Exams loaded");
+    
+    if(!_exams){
+         _exams = [self.model loadExamsFromCalendar:12];
+        NSLog(@"Exams loaded");
+    }
     return _exams;
 }
 
