@@ -46,6 +46,8 @@
  Loads Homeworks from now until now + given months.
  */
 -(NSMutableArray*) loadHomeworksFromCalendar:(int)months{
+    
+
     NSDate *startDate = [NSDate date];
     
     int daysToAdd = months * 30;
@@ -76,6 +78,7 @@
 
 
 -(void)saveHomework:(MSHomework*)homework{
+    NSLog(@"Saving homework...");
     EKReminder *homeworkReminder = [EKReminder reminderWithEventStore:self.calendarStore];
     homeworkReminder.calendar  = [self.calendarStore defaultCalendarForNewReminders];
     homeworkReminder.title = homework.name;
@@ -85,7 +88,7 @@
     [self.calendarStore saveReminder:homeworkReminder commit:YES error:&safeReminderError];
     
     if(safeReminderError){
-        NSLog(@"Couldn't safe reminder!");
+        NSLog(@"Couldn't save reminder!");
     }else{
         NSLog(@"New reminder saved!");
     }

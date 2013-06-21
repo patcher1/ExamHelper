@@ -64,6 +64,7 @@
     [self.homeworks addObject:newHomework];
     
     // TODO Save the new item
+     NSLog(@"Saving homework...");
     [self.model saveHomework:newHomework];
     [self.tableView reloadData];
 }
@@ -131,9 +132,8 @@
 }
 
 -(NSMutableArray*)homeworks{
-    if(!_homeworks){
-        _homeworks = [self.model loadHomeworksFromCalendar:12];
-    }
+    
+    _homeworks = [self.model loadHomeworksFromCalendar:12];
     return _homeworks;
 }
 

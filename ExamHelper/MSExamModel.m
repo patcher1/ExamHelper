@@ -27,8 +27,9 @@
 }
 
 - (EKEventStore*) calendarStore{
-    NSLog(@"Calendar store create");
+   
     if(!_calendarStore){
+         NSLog(@"Calendar store create");
         _calendarStore = [[EKEventStore alloc] init];
     }
     
