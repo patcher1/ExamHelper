@@ -7,7 +7,6 @@
 //
 
 #import "MSExamModel.h"
-#import "MSExam.h"
 #import "EventKit/EventKit.h"
 
 @interface MSExamModel ()
@@ -19,7 +18,7 @@
 
 @synthesize exams = _exams;
 @synthesize calendarStore = _calendarStore;
-//hallo
+
 - (NSMutableArray*) exams{
     if(!_exams){
         _exams = [self loadExamsFromCalendar:12];
@@ -31,6 +30,10 @@
     if(!_calendarStore){
         _calendarStore = [[EKEventStore alloc] init];
     }
+    [_calendarStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        NSLog(@"User didn't permit access to calendar for events");
+    }];
+    
     return _calendarStore;
 }
 
@@ -93,6 +96,26 @@
     }
     return self.exams;
 }
+
+-(void)safeExam:(MSExam*)exam{
+    EKEvent *examEvent = [EKEvent eventWithEventStore:self.calendarStore];
+    examEvent.calendar  = [self.calendarStore defaultCalendarForNewEvents];
+    examEvent.title     = exam.name;
+    examEvent.location  = exam.location;
+    examEvent.notes     = exam.notes;
+    examEvent.startDate = exam.startDate;
+    examEvent.endDate   = exam.endDate;
+    examEvent.allDay    = YES; //only for testing
+    
+    NSError *safeEventError;
+    [self.calendarStore saveEvent:examEvent span:EKSpanThisEvent error:&safeEventError];
+    
+    if(safeEventError){
+        NSLog(@"Couldn't safe event");
+    }
+}
+
+
 
 
 

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSExam.h"
 
 @interface MSExamModel : NSObject
-- (NSMutableArray*) exams;
+-(NSMutableArray*) exams;
 -(NSMutableArray*) loadExamsFromCalendar:(int)months;
 -(NSMutableArray*) loadNextExamsFromCalendar:(int)months fromStartDate:(NSDate*) startDate;
+- (void) safeExam:(MSExam*) exam;
 @end
 

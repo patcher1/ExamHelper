@@ -9,14 +9,18 @@
 #import "MSExamTableViewController.h"
 #import "MSExamDetailViewController.h"
 #import "MSExam.h"
+#import "MSExamModel.h"
 
 @interface MSExamTableViewController ()
 @property (nonatomic, strong) NSMutableArray *exams;
 @property (nonatomic, strong) MSExam *exampleExam;
+@property (nonatomic, strong) MSExamModel *model;
 @end
 
 @implementation MSExamTableViewController
 @synthesize exampleExam;
+@synthesize exams = _exams;
+@synthesize model = _model;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,7 +36,7 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     /*****************************************************/
-    // TODO Remove! This is for testing purposes only!
+    /* TODO Remove! This is for testing purposes only!
     if(!_exams) {
         _exams = [[NSMutableArray alloc] init];
     }
@@ -43,7 +47,7 @@
     [exampleExam setNotes: @"Study hard! It's difficult" ];
     [exampleExam setLocation: @"Zürich" ];
     [_exams addObject:exampleExam];
-    /*****************************************************/
+    ****************************************************/
 }
 
 - (void)insertNewObject:(id)sender
@@ -113,6 +117,22 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     [[segue destinationViewController] setDetailItem:[self.exams objectAtIndex:indexPath.row]];
+}
+
+-(NSMutableArray*)exams{
+    if(_exams){
+        _exams = [self.model loadExamsFromCalendar:12];
+        NSLog(@"Exams loaded");
+    }
+    return _exams;
+}
+
+-(MSExamModel*)model{
+    if(_model){
+        _model = [[MSExamModel alloc]init];
+        NSLog(@"MSExamModel created");
+    }
+    return _model;
 }
 
 - (void) setExams:(NSMutableArray *)exams {
