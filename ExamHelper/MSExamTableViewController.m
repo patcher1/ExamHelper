@@ -31,15 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    /*****************************************************/
-    /* TODO Remove! This is for testing purposes only!
+    
     if(!_exams) {
         _exams = [[NSMutableArray alloc] init];
     }
+    /*****************************************************/
+    /* TODO Remove! This is for testing purposes only!
     exampleExam = [[MSExam alloc] init];
     [exampleExam setStartDate: [[NSDate alloc] init]];
     [exampleExam setEndDate: [[NSDate alloc] init]];

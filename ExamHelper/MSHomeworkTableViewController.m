@@ -28,15 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    /*****************************************************/
-    // TODO Remove! This is for testing purposes only!
+    
     if(!_homework) {
         _homework = [[NSMutableArray alloc] init];
     }
+    /*****************************************************/
+    // TODO Remove! This is for testing purposes only!
     exampleHomework = [[MSHomework alloc] init];
     [exampleHomework setName: @"Complete Presentation" ];
     [exampleHomework setNote: @"Don't forget the handout" ];
@@ -104,7 +104,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Table View Creation");
     MSHomework *currentHomeworkElement = [self.homework objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"HomeworkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
