@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *homeworkTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 @property (weak, nonatomic) IBOutlet UISwitch *isHomeworkDoneSwitch;
-
 @end
 
 @implementation MSHomeworkDetailViewController

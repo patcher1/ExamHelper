@@ -15,13 +15,13 @@ extern const NSString *EXAM_PREFIX;
 - (NSString*) name;
 - (NSString*) location;
 - (NSString*) notes;
-- (NSDate*) startDate;
-- (NSDate*) endDate;
+- (NSString*) startDate;
+- (NSString*) endDate;
 
 - (void) setName:(NSString*)name;
 - (void) setNotes:(NSString*)notes;
 - (void) setLocation:(NSString*)location;
-- (void) setStartDate:(NSDate*)startDate;
-- (void) setEndDate:(NSDate*)endDate;
+- (void) setStartDate:(NSString*)startDate;
+- (void) setEndDate:(NSString*)endDate;
 
 @end

@@ -14,15 +14,11 @@
 @interface MSHomeworkTableViewController ()
 @property (nonatomic, strong) NSMutableArray *homeworks;
 @property (nonatomic,strong) MSHomeWorkModel *model;
-@property (nonatomic, strong) MSHomework *exampleHomework;
 @end
 
 @implementation MSHomeworkTableViewController
-@synthesize exampleHomework;
 @synthesize homeworks = _homeworks;
 @synthesize model = _model;
-
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
