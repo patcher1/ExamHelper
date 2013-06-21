@@ -32,12 +32,12 @@
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.yyyy"];
-    _examTitleTextField.text = _exam.name;
-    _startDateTextfield.text = [dateFormatter stringFromDate:_exam.startDate];
-    _endDateTextField.text = [dateFormatter stringFromDate:_exam.endDate];
-    _locationTextField.text = _exam.location;
-    _notesTextView.text = _exam.notes;
-    _notesTextView.userInteractionEnabled = NO;
+    self.examTitleTextField.text = self.exam.name;
+    self.startDateTextfield.text = [dateFormatter stringFromDate:self.exam.startDate];
+    self.endDateTextField.text = [dateFormatter stringFromDate:self.exam.endDate];
+    self.locationTextField.text = self.exam.location;
+    self.notesTextView.text = self.exam.notes;
+    self.notesTextView.userInteractionEnabled = NO;
 }
 
 - (void)viewDidUnload
@@ -51,13 +51,42 @@
     [super viewDidUnload];
 }
 
+- (void)setEditing:(BOOL)flag animated:(BOOL)animated
+{
+    [super setEditing:flag animated:animated];
+    if (flag == YES){
+        self.examTitleTextField.userInteractionEnabled = YES;
+        self.startDateTextfield.userInteractionEnabled = YES;
+        self.endDateTextField.userInteractionEnabled = YES;
+        self.locationTextField.userInteractionEnabled = YES;
+        self.notesTextView.userInteractionEnabled = YES;
+        NSLog(@"Changing to edit mode");
+    }
+    else {
+        NSLog(@"Saving changes");
+        self.examTitleTextField.userInteractionEnabled = NO;
+        self.startDateTextfield.userInteractionEnabled = NO;
+        self.endDateTextField.userInteractionEnabled = NO;
+        self.locationTextField.userInteractionEnabled = NO;
+        self.notesTextView.userInteractionEnabled = NO;
+        
+        [self.exam setName: self.examTitleTextField.text];
+        [self.exam setName: self.startDateTextfield.text];
+        [self.exam setName: self.endDateTextField.text];
+        [self.exam setName: self.locationTextField.text];
+        [self.exam setName: self.notesTextView.text];
+        
+        // TODO: Save this!
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)setDetailItem: (MSExam*) exam {
-    _exam = exam;
+    self.exam = exam;
 }
 
 @end
