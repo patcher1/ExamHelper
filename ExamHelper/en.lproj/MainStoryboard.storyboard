@@ -222,7 +222,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" minimumFontSize="17" id="CAc-9l-YQF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Zürich" minimumFontSize="17" id="CAc-9l-YQF">
                                 <rect key="frame" x="130" y="125" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -306,33 +306,6 @@
         <image name="books-26.png" width="26" height="26"/>
         <image name="paper-26.png" width="26" height="26"/>
     </resources>
-    <classes>
-        <class className="MSExamDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSExamDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="endDateTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="examTitleTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="locationTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="notesTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="startDateTextfield" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MSExamTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSExamTableViewController.h"/>
-        </class>
-        <class className="MSHomeworkDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSHomeworkDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="isHomeworkDoneToggle:" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="homeworkTitleTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="isHomeworkDoneSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="notesTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MSHomeworkTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSHomeworkTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

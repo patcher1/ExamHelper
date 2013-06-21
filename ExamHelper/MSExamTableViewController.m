@@ -41,6 +41,9 @@
     MSExam *newExam = [[MSExam alloc] init];
     
     [newExam setName:@"Exam"];
+    [newExam setStartDate:[[NSDate alloc] init]];
+    [newExam setEndDate:[[NSDate alloc] init]];
+    [newExam setLocation:@"Zürich"];
     [newExam setNotes:@"Template, you can edit this now"];
     
     [self.exams addObject:newExam];

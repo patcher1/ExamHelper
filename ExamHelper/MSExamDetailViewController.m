@@ -10,7 +10,6 @@
 
 @interface MSExamDetailViewController ()
 @property (nonatomic, strong) MSExam *exam;
-
 @property (weak, nonatomic) IBOutlet UITextField *examTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *startDateTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *endDateTextField;
