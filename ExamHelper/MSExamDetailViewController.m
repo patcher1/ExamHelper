@@ -51,6 +51,35 @@
     [super viewDidUnload];
 }
 
+- (void)setEditing:(BOOL)flag animated:(BOOL)animated
+{
+    [super setEditing:flag animated:animated];
+    if (flag == YES){
+        self.examTitleTextField.userInteractionEnabled = YES;
+        self.startDateTextfield.userInteractionEnabled = YES;
+        self.endDateTextField.userInteractionEnabled = YES;
+        self.locationTextField.userInteractionEnabled = YES;
+        self.notesTextView.userInteractionEnabled = YES;
+        NSLog(@"Changing to edit mode");
+    }
+    else {
+        NSLog(@"Saving changes");
+        self.examTitleTextField.userInteractionEnabled = NO;
+        self.startDateTextfield.userInteractionEnabled = NO;
+        self.endDateTextField.userInteractionEnabled = NO;
+        self.locationTextField.userInteractionEnabled = NO;
+        self.notesTextView.userInteractionEnabled = NO;
+        
+        [self.exam setName: self.examTitleTextField.text];
+        [self.exam setName: self.startDateTextfield.text];
+        [self.exam setName: self.endDateTextField.text];
+        [self.exam setName: self.locationTextField.text];
+        [self.exam setName: self.notesTextView.text];
+        
+        // TODO: Save this!
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

@@ -68,9 +68,9 @@
         _homeworkTitleTextField.userInteractionEnabled = NO;
         _notesTextView.userInteractionEnabled = NO;
         
-        [_homework setName: _homeworkTitleTextField.text];
-        [_homework setNote: _notesTextView.text];
-        [_homework setDone: _isHomeworkDoneSwitch.on];
+        [self.homework setName: _homeworkTitleTextField.text];
+        [self.homework setNote: _notesTextView.text];
+        [self.homework setDone: _isHomeworkDoneSwitch.on];
         
         // TODO: Save this!
     }
