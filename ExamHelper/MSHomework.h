@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface MSHomework : NSObject
-
+extern const NSString *HOMEWORK_PREFIX;
 - (NSString*) name;
-- (void) setName: (NSString*) name;
 - (NSString*) note;
-- (void) setNote: (NSString*) note;
 - (BOOL*) done;
+
+- (void) setName: (NSString*) name;
+- (void) setNote: (NSString*) note;
 - (void) setDone: (BOOL*) done;
 
 @end

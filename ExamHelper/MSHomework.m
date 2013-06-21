@@ -8,6 +8,8 @@
 
 #import "MSHomework.h"
 
+const NSString *HOMEWORK_PREFIX = @"[HOMEWORK]";
+
 @interface MSHomework ()
 
 @property (nonatomic, weak) NSString* name;

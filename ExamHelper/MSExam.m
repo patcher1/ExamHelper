@@ -10,7 +10,7 @@
 
 #import "MSExam.h"
 
-const NSString *EXAM_PREFIX = @"Exam";
+const NSString *EXAM_PREFIX = @"[EXAM]";
 
 @interface MSExam()
 @property (nonatomic,strong) NSString *name;
