@@ -30,7 +30,6 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _homeworkTitleTextField.borderStyle = UITextBorderStyleNone;
     _homeworkTitleTextField.userInteractionEnabled = NO;
     _homeworkTitleTextField.text = _homework.name;
     _notesTextView.text = _homework.note;

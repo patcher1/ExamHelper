@@ -10,10 +10,12 @@
 
 @interface MSExamDetailViewController ()
 @property (nonatomic, strong) MSExam *exam;
-@property (weak, nonatomic) IBOutlet UILabel *examTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *examTitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *startDateTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *endDateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
+
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 @end
 
@@ -31,22 +33,22 @@
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.yyyy"];
-    _examTitleLabel.text = _exam.name;
-    _startDateLabel.text = [dateFormatter stringFromDate:_exam.startDate];
-    _endDateLabel.text = [dateFormatter stringFromDate:_exam.endDate];
-    _locationLabel.text = _exam.location;
+    _examTitleTextField.text = _exam.name;
+    _startDateTextfield.text = [dateFormatter stringFromDate:_exam.startDate];
+    _endDateTextField.text = [dateFormatter stringFromDate:_exam.endDate];
+    _locationTextField.text = _exam.location;
     _notesTextView.text = _exam.notes;
     _notesTextView.userInteractionEnabled = NO;
 }
 
 - (void)viewDidUnload
 {
-    [self setExamTitleLabel:nil];
-    [self setStartDateLabel:nil];
-    [self setEndDateLabel:nil];
-    [self setLocationLabel:nil];
     [self setNotesTextView:nil];
     [self setNotesTextView:nil];
+    [self setExamTitleTextField:nil];
+    [self setStartDateTextfield:nil];
+    [self setEndDateTextField:nil];
+    [self setLocationTextField:nil];
     [super viewDidUnload];
 }
 
