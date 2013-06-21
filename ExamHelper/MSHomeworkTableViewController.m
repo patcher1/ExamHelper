@@ -75,9 +75,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(![currentHomeworkElement done]) {
-        cell.imageView.image = [UIImage imageNamed: @"in_progress-26.png"];
+        cell.imageView.image = [UIImage imageNamed: @"historical-26.png"];
     } else {
-        cell.imageView.image = [UIImage imageNamed: @"tick-26.png"];
+        cell.imageView.image = [UIImage imageNamed: @"checkmark-26.png"];
     }
     
     cell.textLabel.text = [currentHomeworkElement name];
