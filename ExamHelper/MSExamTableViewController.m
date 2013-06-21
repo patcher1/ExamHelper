@@ -32,18 +32,7 @@
     [super viewDidLoad];    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-<<<<<<< HEAD
     [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
-=======
-<<<<<<< HEAD
-=======
-    [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
-    
-    if(!_exams) {
-        _exams = [[NSMutableArray alloc] init];
-    }
->>>>>>> c2cf03ca4c6533ea7618cdad0cc420686c931f03
->>>>>>> 7fd16fe3d7b978f2570e7ba7b408cd9373152b19
 }
 
 - (void)insertNewObject:(id)sender
@@ -58,12 +47,7 @@
     
     [self.exams addObject:newExam];
     NSLog(@"New exam added");
-    
-<<<<<<< HEAD
     NSLog(@"Date info: %@ %@", [[NSDate alloc] init], [self.dateFormatter stringFromDate:newExam.endDate]);
-=======
-    NSLog(@"Date info: %@ %@", [self.dateFormatter stringFromDate:newExam.startDate], [self.dateFormatter stringFromDate:newExam.endDate]);
->>>>>>> 7fd16fe3d7b978f2570e7ba7b408cd9373152b19
     
     // TODO Save the new item
     [self.model safeExam:newExam];
