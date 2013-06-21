@@ -10,6 +10,7 @@
 		35052D511772F30D00C73052 /* MSExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 35052D501772F30D00C73052 /* MSExam.m */; };
 		35052D601772F8BC00C73052 /* MSExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35052D5F1772F8BC00C73052 /* MSExamModel.m */; };
 		35052D621773034F00C73052 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35052D611773034F00C73052 /* EventKit.framework */; };
+		355B124E17744E7F0081E934 /* MSHomeWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B124D17744E7F0081E934 /* MSHomeWorkModel.m */; };
 		35A0CD1F17742E6800E10312 /* checkmark-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A0CD1D17742E6800E10312 /* checkmark-26.png */; };
 		35A0CD2017742E6800E10312 /* historical-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A0CD1E17742E6800E10312 /* historical-26.png */; };
 		35A0CD24177442F000E10312 /* calendargrep.sh in Resources */ = {isa = PBXBuildFile; fileRef = 35A0CD22177442F000E10312 /* calendargrep.sh */; };
@@ -39,6 +40,8 @@
 		35052D5E1772F8BC00C73052 /* MSExamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExamModel.h; sourceTree = "<group>"; };
 		35052D5F1772F8BC00C73052 /* MSExamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExamModel.m; sourceTree = "<group>"; };
 		35052D611773034F00C73052 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		355B124C17744E7F0081E934 /* MSHomeWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeWorkModel.h; sourceTree = "<group>"; };
+		355B124D17744E7F0081E934 /* MSHomeWorkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeWorkModel.m; sourceTree = "<group>"; };
 		35A0CD1D17742E6800E10312 /* checkmark-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-26.png"; sourceTree = "<group>"; };
 		35A0CD1E17742E6800E10312 /* historical-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "historical-26.png"; sourceTree = "<group>"; };
 		35A0CD22177442F000E10312 /* calendargrep.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = calendargrep.sh; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 			children = (
 				35D34B2A1772F53300CEE3CF /* MSHomework.h */,
 				35D34B2B1772F53300CEE3CF /* MSHomework.m */,
+				355B124C17744E7F0081E934 /* MSHomeWorkModel.h */,
+				355B124D17744E7F0081E934 /* MSHomeWorkModel.m */,
 			);
 			name = HomeworkModel;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				35052D511772F30D00C73052 /* MSExam.m in Sources */,
 				35D34B2C1772F53300CEE3CF /* MSHomework.m in Sources */,
 				35052D601772F8BC00C73052 /* MSExamModel.m in Sources */,
+				355B124E17744E7F0081E934 /* MSHomeWorkModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

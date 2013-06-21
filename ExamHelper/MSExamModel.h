@@ -14,5 +14,6 @@
 -(NSMutableArray*) loadExamsFromCalendar:(int)months;
 -(NSMutableArray*) loadNextExamsFromCalendar:(int)months fromStartDate:(NSDate*) startDate;
 - (void) safeExam:(MSExam*) exam;
+- (void) deleteExam:(MSExam*) exam;
 @end
 

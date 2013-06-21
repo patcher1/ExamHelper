@@ -9,15 +9,25 @@
 #import "MSHomeworkTableViewController.h"
 #import "MSHomeworkDetailViewController.h"
 #import "MSHomework.h"
+#import "MSHomeWorkModel.h"
 
 @interface MSHomeworkTableViewController ()
-@property (nonatomic, strong) NSMutableArray *homework;
+@property (nonatomic, strong) NSMutableArray *homeworks;
+@property (nonatomic,strong) MSHomeWorkModel *model;
 @property (nonatomic, strong) MSHomework *exampleHomework;
 @end
 
 @implementation MSHomeworkTableViewController
 @synthesize exampleHomework;
-@synthesize homework = _homework;
+@synthesize homeworks = _homeworks;
+@synthesize model = _model;
+
+- (MSHomeWorkModel*)model{
+    if(!_model){
+        _model = [[MSHomeWorkModel alloc]init];
+    }
+    return _model;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,10 +42,10 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    if(!_homework) {
-        _homework = [[NSMutableArray alloc] init];
+    if(!_homeworks) {
+        _homeworks = [[NSMutableArray alloc] init];
     }
-    /*****************************************************/
+    /*****************************************************
     // TODO Remove! This is for testing purposes only!
     exampleHomework = [[MSHomework alloc] init];
     [exampleHomework setName: @"Complete Presentation" ];
@@ -47,7 +57,7 @@
     [exampleHomework setNote: @"Don't forget to refactor" ];
     [exampleHomework setDone: YES ];
     [_homework addObject:exampleHomework];
-    /*****************************************************/
+    *****************************************************/
 }
 
 - (void)viewDidUnload
@@ -64,17 +74,17 @@
     [newHomework setNote:@"Template, you can edit this now"];
     [newHomework setDone: NO];
     
-    [_homework addObject:newHomework];
+    [self.homeworks addObject:newHomework];
     
     // TODO Save the new item
-    
+    [self.model saveHomework:newHomework];
     [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_homework removeObjectAtIndex:indexPath.row];
+        [self.homeworks removeObjectAtIndex:indexPath.row];
     }
     
     // TODO Delete the new item
@@ -94,7 +104,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_homework count];
+    return [self.homeworks count];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,7 +114,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MSHomework *currentHomeworkElement = [self.homework objectAtIndex:indexPath.row];
+    MSHomework *currentHomeworkElement = [self.homeworks objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"HomeworkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -126,11 +136,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    [[segue destinationViewController] setDetailItem:[self.homework objectAtIndex:indexPath.row]];
+    [[segue destinationViewController] setDetailItem:[self.homeworks objectAtIndex:indexPath.row]];
 }
 
 - (void) setHomework:(NSMutableArray *)homework {
-    _homework = homework;
+    _homeworks = homework;
+}
+
+-(NSMutableArray*)homeworks{
+    if(!_homeworks){
+        _homeworks = [self.model loadHomeworksFromCalendar:12];
+    }
+    return _homeworks;
 }
 
 @end

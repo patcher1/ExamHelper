@@ -122,7 +122,9 @@
         NSLog(@"New event saved!");
     }
 }
-
+- (void) deleteExam:(MSExam*) exam{
+    
+}
 
 
 
