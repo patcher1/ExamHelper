@@ -27,8 +27,6 @@
 		35EE3D521771AAA500D7EA5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EE3D511771AAA500D7EA5B /* main.m */; };
 		35EE3D561771AAA500D7EA5B /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EE3D551771AAA500D7EA5B /* MSAppDelegate.m */; };
 		35EE3D591771AAA500D7EA5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EE3D571771AAA500D7EA5B /* MainStoryboard.storyboard */; };
-		CE18BAF9177389AC009654A0 /* in_progress-26.png in Resources */ = {isa = PBXBuildFile; fileRef = CE18BAF7177389AC009654A0 /* in_progress-26.png */; };
-		CE18BAFA177389AC009654A0 /* tick-26.png in Resources */ = {isa = PBXBuildFile; fileRef = CE18BAF8177389AC009654A0 /* tick-26.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +61,6 @@
 		35EE3D541771AAA500D7EA5B /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		35EE3D551771AAA500D7EA5B /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
 		35EE3D581771AAA500D7EA5B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		CE18BAF7177389AC009654A0 /* in_progress-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "in_progress-26.png"; path = "../../../Desktop/in_progress-26.png"; sourceTree = "<group>"; };
-		CE18BAF8177389AC009654A0 /* tick-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tick-26.png"; path = "../../../Desktop/tick-26.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +125,6 @@
 		35D34B1A1772F03000CEE3CF /* _Icons */ = {
 			isa = PBXGroup;
 			children = (
-				CE18BAF7177389AC009654A0 /* in_progress-26.png */,
-				CE18BAF8177389AC009654A0 /* tick-26.png */,
 				35E15EB2177333AC00D43EAB /* Default-568h@2x.png */,
 				35D34B0A1772ED2E00CEE3CF /* paper-26.png */,
 				35D34B081772ECF600CEE3CF /* books-26.png */,
@@ -259,8 +253,6 @@
 				35D34B091772ECF600CEE3CF /* books-26.png in Resources */,
 				35D34B0B1772ED2E00CEE3CF /* paper-26.png in Resources */,
 				35E15EB3177333AC00D43EAB /* Default-568h@2x.png in Resources */,
-				CE18BAF9177389AC009654A0 /* in_progress-26.png in Resources */,
-				CE18BAFA177389AC009654A0 /* tick-26.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
