@@ -93,6 +93,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"ExamCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.textLabel.text = [[self.exams objectAtIndex:indexPath.row] name];
@@ -108,6 +109,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     [[segue destinationViewController] setDetailItem:[self.exams objectAtIndex:indexPath.row]];
+    [[segue destinationViewController] setModel:self.model];
 }
 
 -(NSMutableArray*)exams{

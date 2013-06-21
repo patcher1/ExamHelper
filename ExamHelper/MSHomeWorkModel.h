@@ -11,7 +11,7 @@
 
 @interface MSHomeWorkModel : NSObject
 -(NSMutableArray*) homeworks;
--(NSMutableArray*) loadHomeworksFromCalendar:(int)months;
+-(NSMutableArray*) loadHomeworksFromCalendar;
 - (void) saveHomework:(MSHomework*) homework;
 - (void) deleteHomework:(MSHomework*) homework;
 @end

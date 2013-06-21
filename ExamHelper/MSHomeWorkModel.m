@@ -26,16 +26,18 @@
 }
 
 - (EKEventStore*) calendarStore{
-    
+    NSLog(@"Calendar store create");
     if(!_calendarStore){
         _calendarStore = [[EKEventStore alloc] init];
-        if([_calendarStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-            NSLog(@"Running on ios6");
-            [_calendarStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-                NSLog(@"User permited access to calendar for reminders");
-            }];
-        }  
     }
+    
+    if([_calendarStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+        NSLog(@"Running on ios6");
+        [_calendarStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+            NSLog(@"User permited access to calendar for reminders");
+        }];
+    }
+    
     
     return _calendarStore;
 }
@@ -43,25 +45,12 @@
 /**
  Loads Homeworks from now until now + given months.
  */
--(NSMutableArray*) loadHomeworksFromCalendar:(int)months{
+-(NSMutableArray*) loadHomeworksFromCalendar{
     
-
-    NSDate *startDate = [NSDate date];
-    
-    int daysToAdd = months * 30;
-    
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay:daysToAdd];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    NSDate *endDate = [gregorian dateByAddingComponents:components toDate:startDate options:0];
-    
-    NSLog(@"Dates start: %@ end: %@",startDate,endDate);
-    
-    NSPredicate *predicate = [self.calendarStore predicateForIncompleteRemindersWithDueDateStarting:startDate ending:endDate calendars:nil];
+    NSPredicate *predicate = [self.calendarStore predicateForRemindersInCalendars:nil];
     
     [self.calendarStore fetchRemindersMatchingPredicate:predicate completion:^(NSArray *reminders) {
+        NSLog(@"Fetch reminders");
         for (EKReminder *reminder in reminders) {
             MSHomework *homework = [[MSHomework alloc]init];
             homework.name = reminder.title;

@@ -94,10 +94,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     NSLog(@"test!!!!!!!!!");
     MSHomework *currentHomeworkElement = [self.homeworks objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"HomeworkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+   
     if(![currentHomeworkElement done]) {
         cell.imageView.image = [UIImage imageNamed: @"historical-26.png"];
     } else {
@@ -125,7 +126,7 @@
 
 -(NSMutableArray*)homeworks{
     if(!_homeworks){
-        _homeworks = [self.model loadHomeworksFromCalendar:12];
+        _homeworks = [self.model loadHomeworksFromCalendar];
         NSLog(@"Homeworks loaded");
     }
     return _homeworks;

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MSExam.h"
-
+#import "MSExamModel.h"
 @interface MSExamDetailViewController : UIViewController
 
 - (void)setDetailItem: (MSExam*) exam;
-
+- (void)setModel:(MSExamModel*)model;
 @end

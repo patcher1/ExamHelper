@@ -10,6 +10,7 @@
 
 @interface MSExamDetailViewController ()
 @property (nonatomic, strong) MSExam *exam;
+@property (nonatomic,strong) MSExamModel *model;
 @property (weak, nonatomic) IBOutlet UITextField *examTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *startDateTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *endDateTextField;
@@ -67,7 +68,8 @@
         [self.exam setLocation: self.locationTextField.text];
         [self.exam setNotes: self.notesTextView.text];
         
-        // TODO: Save this!
+        [self.model safeExam:self.exam];
+        
     }
 }
 
@@ -94,6 +96,10 @@
 
 - (void)setDetailItem: (MSExam*) exam {
     self.exam = exam;
+}
+
+- (void)setModel:(MSExamModel*)model{
+    _model = model;
 }
 
 @end
