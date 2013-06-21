@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *startDateTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *endDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
-
 @property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 @end
 
