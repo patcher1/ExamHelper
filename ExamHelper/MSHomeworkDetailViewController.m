@@ -30,11 +30,11 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _homeworkTitleTextField.userInteractionEnabled = NO;
-    _homeworkTitleTextField.text = _homework.name;
-    _notesTextView.text = _homework.note;
-    _notesTextView.userInteractionEnabled = NO;
-    _isHomeworkDoneSwitch.on = _homework.done;
+    self.homeworkTitleTextField.userInteractionEnabled = NO;
+    self.homeworkTitleTextField.text = self.homework.name;
+    self.notesTextView.text = self.homework.note;
+    self.notesTextView.userInteractionEnabled = NO;
+    self.isHomeworkDoneSwitch.on = self.homework.done;
 }
 
 - (void)viewDidUnload
@@ -46,7 +46,7 @@
 }
 
 - (IBAction)isHomeworkDoneToggle:(UISwitch *)sender {
-    [_homework setDone: sender.on];
+    [self.homework setDone: sender.on];
     // TODO: Save this!
 }
 
@@ -59,25 +59,24 @@
 {
     [super setEditing:flag animated:animated];
     if (flag == YES){
-        _homeworkTitleTextField.userInteractionEnabled = YES;
-        _notesTextView.userInteractionEnabled = YES;
+        self.homeworkTitleTextField.userInteractionEnabled = YES;
+        self.notesTextView.userInteractionEnabled = YES;
         NSLog(@"Changing to edit mode");
     }
     else {
         NSLog(@"Saving changes");
-        _homeworkTitleTextField.userInteractionEnabled = NO;
-        _notesTextView.userInteractionEnabled = NO;
+        self.homeworkTitleTextField.userInteractionEnabled = NO;
+        self.notesTextView.userInteractionEnabled = NO;
         
-        [self.homework setName: _homeworkTitleTextField.text];
-        [self.homework setNote: _notesTextView.text];
-        [self.homework setDone: _isHomeworkDoneSwitch.on];
-        
+        [self.homework setName: self.homeworkTitleTextField.text];
+        [self.homework setNote: self.notesTextView.text];
+        [self.homework setDone: self.isHomeworkDoneSwitch.on];
         // TODO: Save this!
     }
 }
 
 - (void)setDetailItem: (MSHomework*) homework {
-    _homework = homework;
+    self.homework = homework;
 }
 
 @end

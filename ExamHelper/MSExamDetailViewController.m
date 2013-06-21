@@ -32,12 +32,12 @@
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.yyyy"];
-    _examTitleTextField.text = _exam.name;
-    _startDateTextfield.text = [dateFormatter stringFromDate:_exam.startDate];
-    _endDateTextField.text = [dateFormatter stringFromDate:_exam.endDate];
-    _locationTextField.text = _exam.location;
-    _notesTextView.text = _exam.notes;
-    _notesTextView.userInteractionEnabled = NO;
+    self.examTitleTextField.text = self.exam.name;
+    self.startDateTextfield.text = [dateFormatter stringFromDate:self.exam.startDate];
+    self.endDateTextField.text = [dateFormatter stringFromDate:self.exam.endDate];
+    self.locationTextField.text = self.exam.location;
+    self.notesTextView.text = self.exam.notes;
+    self.notesTextView.userInteractionEnabled = NO;
 }
 
 - (void)viewDidUnload
@@ -86,7 +86,7 @@
 }
 
 - (void)setDetailItem: (MSExam*) exam {
-    _exam = exam;
+    self.exam = exam;
 }
 
 @end
