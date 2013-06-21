@@ -28,6 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
     /*****************************************************/
     // TODO Remove! This is for testing purposes only!
     if(!_homework) {
@@ -52,6 +56,32 @@
     [self.tableView reloadData];
 }
 
+- (void)insertNewObject:(id)sender
+{
+    MSHomework *newHomework = [[MSHomework alloc] init];
+    
+    [newHomework setName:@"Homework"];
+    [newHomework setNote:@"Template, you can edit this now"];
+    [newHomework setDone: NO];
+    
+    [_homework addObject:newHomework];
+    
+    // TODO Save the new item
+    
+    [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_homework removeObjectAtIndex:indexPath.row];
+    }
+    
+    // TODO Delete the new item
+    
+    [self.tableView reloadData];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -65,6 +95,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_homework count];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
