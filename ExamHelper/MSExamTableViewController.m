@@ -14,6 +14,7 @@
 @interface MSExamTableViewController ()
 @property (nonatomic, strong) NSMutableArray *exams;
 @property (nonatomic, strong) MSExamModel *model;
+@property (weak, nonatomic) NSDateFormatter* dateFormatter;
 @end
 
 @implementation MSExamTableViewController
@@ -31,6 +32,14 @@
     [super viewDidLoad];    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+<<<<<<< HEAD
+=======
+    [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    
+    if(!_exams) {
+        _exams = [[NSMutableArray alloc] init];
+    }
+>>>>>>> c2cf03ca4c6533ea7618cdad0cc420686c931f03
 }
 
 - (void)insertNewObject:(id)sender
@@ -44,7 +53,9 @@
     [newExam setNotes:@"Template, you can edit this now"];
     
     [self.exams addObject:newExam];
-    NSLog(@"new exam added");
+    NSLog(@"New exam added");
+    
+    NSLog(@"Date info: %@ %@", [self.dateFormatter stringFromDate:newExam.startDate], [self.dateFormatter stringFromDate:newExam.endDate]);
     
     // TODO Save the new item
     [self.model safeExam:newExam];
