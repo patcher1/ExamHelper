@@ -28,9 +28,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
+    [super viewDidLoad];    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     if(!_exams) {
