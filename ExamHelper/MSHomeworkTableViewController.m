@@ -12,6 +12,7 @@
 #import "MSHomeWorkModel.h"
 
 @interface MSHomeworkTableViewController ()
+<<<<<<< HEAD
 @property (nonatomic, strong) NSMutableArray *homeworks;
 @property (nonatomic,strong) MSHomeWorkModel *model;
 @property (nonatomic, strong) MSHomework *exampleHomework;
@@ -28,6 +29,13 @@
     }
     return _model;
 }
+=======
+@property (nonatomic, strong) NSMutableArray *homework;
+@end
+
+@implementation MSHomeworkTableViewController
+@synthesize homework = _homework;
+>>>>>>> 8a9f8e51c81362eb349be53e1811954b028082ba
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,6 +53,7 @@
     if(!_homeworks) {
         _homeworks = [[NSMutableArray alloc] init];
     }
+<<<<<<< HEAD
     /*****************************************************
     // TODO Remove! This is for testing purposes only!
     exampleHomework = [[MSHomework alloc] init];
@@ -58,6 +67,8 @@
     [exampleHomework setDone: YES ];
     [_homework addObject:exampleHomework];
     *****************************************************/
+=======
+>>>>>>> 8a9f8e51c81362eb349be53e1811954b028082ba
 }
 
 - (void)viewDidUnload

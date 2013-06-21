@@ -30,11 +30,10 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.homeworkTitleTextField.userInteractionEnabled = NO;
     self.homeworkTitleTextField.text = self.homework.name;
     self.notesTextView.text = self.homework.note;
-    self.notesTextView.userInteractionEnabled = NO;
     self.isHomeworkDoneSwitch.on = self.homework.done;
+    [self disableEditingForEditableUIElements];
 }
 
 - (void)viewDidUnload
@@ -59,20 +58,27 @@
 {
     [super setEditing:flag animated:animated];
     if (flag == YES){
-        self.homeworkTitleTextField.userInteractionEnabled = YES;
-        self.notesTextView.userInteractionEnabled = YES;
         NSLog(@"Changing to edit mode");
+        [self enableEditingForEditableUIElements];
     }
     else {
         NSLog(@"Saving changes");
-        self.homeworkTitleTextField.userInteractionEnabled = NO;
-        self.notesTextView.userInteractionEnabled = NO;
-        
+        [self disableEditingForEditableUIElements];
         [self.homework setName: self.homeworkTitleTextField.text];
         [self.homework setNote: self.notesTextView.text];
         [self.homework setDone: self.isHomeworkDoneSwitch.on];
         // TODO: Save this!
     }
+}
+
+- (void)disableEditingForEditableUIElements {
+    self.homeworkTitleTextField.userInteractionEnabled = NO;
+    self.notesTextView.userInteractionEnabled = NO;
+}
+
+- (void)enableEditingForEditableUIElements {
+    self.homeworkTitleTextField.userInteractionEnabled = YES;
+    self.notesTextView.userInteractionEnabled = YES;
 }
 
 - (void)setDetailItem: (MSHomework*) homework {
