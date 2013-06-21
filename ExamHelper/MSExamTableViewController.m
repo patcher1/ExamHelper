@@ -108,10 +108,10 @@
 }
 
 -(NSMutableArray*)exams{
-    if(!_exams){
-        _exams = [self.model loadExamsFromCalendar:12];
-        NSLog(@"Exams loaded");
-    }
+    NSLog(@"Exams loading...");
+   
+    _exams = [self.model loadExamsFromCalendar:12];
+    NSLog(@"Exams loaded");
     return _exams;
 }
 
