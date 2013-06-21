@@ -31,23 +31,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    if(!_exams) {
-        _exams = [[NSMutableArray alloc] init];
-    }
     /*****************************************************/
     /* TODO Remove! This is for testing purposes only!
-    exampleExam = [[MSExam alloc] init];
-    [exampleExam setStartDate: [[NSDate alloc] init]];
-    [exampleExam setEndDate: [[NSDate alloc] init]];
-    [exampleExam setName: @"German Exam" ];
-    [exampleExam setNotes: @"Study hard! It's difficult" ];
-    [exampleExam setLocation: @"Zürich" ];
-    [_exams addObject:exampleExam];
-    ****************************************************/
+     if(!_exams) {
+     _exams = [[NSMutableArray alloc] init];
+     }
+     exampleExam = [[MSExam alloc] init];
+     [exampleExam setStartDate: [[NSDate alloc] init]];
+     [exampleExam setEndDate: [[NSDate alloc] init]];
+     [exampleExam setName: @"German Exam" ];
+     [exampleExam setNotes: @"Study hard! It's difficult" ];
+     [exampleExam setLocation: @"Zürich" ];
+     [_exams addObject:exampleExam];
+     ****************************************************/
 }
 
 - (void)insertNewObject:(id)sender
@@ -57,17 +57,18 @@
     [newExam setName:@"Exam"];
     [newExam setNotes:@"Template, you can edit this now"];
     
-    [_exams addObject:newExam];
+    [self.exams addObject:newExam];
+    NSLog(@"new exam added");
     
     // TODO Save the new item
-    
+    [self.model safeExam:newExam];
     [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_exams removeObjectAtIndex:indexPath.row];
+        [self.exams removeObjectAtIndex:indexPath.row];
     }
     
     // TODO Delete the new item
@@ -92,7 +93,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_exams count];
+    return [self.exams count];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,7 +121,7 @@
 }
 
 -(NSMutableArray*)exams{
-    if(_exams){
+    if(!_exams){
         _exams = [self.model loadExamsFromCalendar:12];
         NSLog(@"Exams loaded");
     }
@@ -128,7 +129,7 @@
 }
 
 -(MSExamModel*)model{
-    if(_model){
+    if(!_model){
         _model = [[MSExamModel alloc]init];
         NSLog(@"MSExamModel created");
     }
